@@ -1,0 +1,368 @@
+body {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  background: #050505;
+  color: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.03) 0px,
+      rgba(255,255,255,0.03) 1px,
+      transparent 2px,
+      transparent 4px
+    );
+  pointer-events: none;
+  z-index: 3;
+  animation: scanlines 0.2s linear infinite;
+}
+
+body::after {
+  content: "REC ●";
+  position: fixed;
+  top: 22px;
+  left: 28px;
+  color: #ff2b2b;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px red;
+  animation: blink 1s infinite;
+  z-index: 4;
+}
+
+.container {
+  width: 90%;
+  max-width: 750px;
+  background: rgba(10, 10, 10, 0.88);
+  padding: 32px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 0 20px rgba(255, 0, 0, 0.25),
+    inset 0 0 30px rgba(255, 255, 255, 0.04);
+  text-align: center;
+  position: relative;
+  animation: flicker 3s infinite, floaty 4s ease-in-out infinite;
+}
+
+.container::before {
+  content: "PLAY  ▷   SP";
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  color: rgba(255,255,255,0.65);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.container::after {
+  content: "CAMERA 01 / HORROR SURVIVAL TEST";
+  position: absolute;
+  bottom: 10px;
+  left: 18px;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow:
+    2px 0 #ff0000,
+    -2px 0 #00ffff;
+  animation: glitch 1.5s infinite;
+}
+
+.question {
+  font-size: 1.25rem;
+  margin: 30px 0;
+  line-height: 1.6;
+  text-shadow: 0 0 6px rgba(255,255,255,0.35);
+}
+
+.answers button {
+  display: block;
+  width: 100%;
+  margin: 12px 0;
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(20, 20, 20, 0.95);
+  color: #f5f5f5;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  font-size: 1rem;
+  text-align: left;
+  transition: 0.2s;
+}
+
+.answers button:hover {
+  background: #2b0000;
+  color: #fff;
+  transform: translateX(6px);
+  box-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+  text-shadow: 2px 0 red, -2px 0 cyan;
+}
+
+.progress {
+  margin-top: 15px;
+  color: #aaa;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.result {
+  display: none;
+}
+
+.result h2 {
+  color: #fff;
+  font-size: 2rem;
+  text-shadow:
+    2px 0 #ff0000,
+    -2px 0 #00ffff;
+  animation: glitch 1.2s infinite;
+}
+
+.result p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.restart {
+  margin-top: 20px;
+  padding: 13px 22px;
+  background: #190000;
+  color: white;
+  border: 1px solid #ff3b3b;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  letter-spacing: 1px;
+}
+
+.restart:hover {
+  background: #ff3b3b;
+  box-shadow: 0 0 15px red;
+}
+
+@keyframes scanlines {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes blink {
+  0%, 45% {
+    opacity: 1;
+  }
+  46%, 100% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 0.92;
+  }
+  94% {
+    opacity: 0.75;
+  }
+  96% {
+    opacity: 0.97;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  60% {
+    transform: translate(-1px, 0);
+  }
+  80% {
+    transform: translate(1px, 1px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes floaty {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@media (max-width: 600px) {
+  body {
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-y: auto;
+    padding: 20px 0;
+  }
+
+  body::after {
+    top: 12px;
+    left: 14px;
+    font-size: 0.9rem;
+  }
+
+  .container {
+    width: 88%;
+    padding: 24px 18px 42px;
+    margin-top: 35px;
+  }
+
+  .container::before {
+    top: 8px;
+    right: 12px;
+    font-size: 0.65rem;
+  }
+
+  .container::after {
+    font-size: 0.6rem;
+    left: 12px;
+    bottom: 8px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    line-height: 1.3;
+  }
+
+  .question {
+    font-size: 1rem;
+    margin: 22px 0;
+  }
+
+  .answers button {
+    font-size: 0.9rem;
+    padding: 13px;
+    line-height: 1.4;
+  }
+
+  .answers button:hover {
+    transform: none;
+  }
+
+  .result h2 {
+    font-size: 1.45rem;
+    line-height: 1.3;
+  }
+
+  .result p {
+    font-size: 1rem;
+  }
+
+  .restart {
+    width: 100%;
+    padding: 14px;
+  }
+}
+#quiz {
+  display: none;
+}
+
+#intro-screen {
+  text-align: center;
+  transition: opacity 0.3s ease;
+  animation: flicker 4s infinite;
+}
+
+.warning-header {
+  color: #ff3b3b;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.intro-box {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 20px;
+  margin: 25px 0;
+  background: rgba(255,255,255,0.03);
+}
+
+.intro-box p {
+  line-height: 1.8;
+  color: #d0d0d0;
+  margin: 16px 0;
+}
+
+.creator {
+  color: #888;
+  margin: 25px 0;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.creator a {
+  color: #ff3b3b;
+  text-decoration: none;
+}
+
+.creator a:hover {
+  text-shadow: 0 0 10px red;
+}
+
+#start-btn {
+  margin-top: 10px;
+  padding: 15px 30px;
+  background: #180000;
+  color: white;
+  border: 1px solid #ff3b3b;
+  cursor: pointer;
+  font-family: "Courier New", monospace;
+  letter-spacing: 3px;
+}
+
+#start-btn:hover {
+  background: #ff3b3b;
+  box-shadow: 0 0 15px red;
+}
+
+@media (max-width: 600px) {
+  .warning-header {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+
+  .intro-box {
+    padding: 15px;
+  }
+
+  .intro-box p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  #start-btn {
+    width: 100%;
+    padding: 14px;
+  }
+}

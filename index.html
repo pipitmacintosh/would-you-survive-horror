@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Would You Survive a Horror Movie?</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+  <div id="intro-screen">
+      <div class="warning-header">
+        VHS ARCHIVE #013
+      </div>
+
+      <h1>WOULD YOU SURVIVE A HORROR MOVIE?</h1>
+
+      <div class="intro-box">
+        <p>WARNING</p>
+
+        <p>
+          This tape contains a simulated horror survival assessment.
+        </p>
+
+        <p>
+          Your choices will determine what kind of horror movie character you would become.
+        </p>
+
+        <p>
+          Survivor. Victim. Villain.
+          Or something much worse.
+        </p>
+
+        <p>
+          No physical harm will occur.
+          Probably.
+        </p>
+      </div>
+
+      <div class="creator">
+        RECOVERED AND DIGITIZED BY
+        <br><br>
+
+        <a
+          href="https://github.com/pipitmacintosh"
+          target="_blank"
+        >
+          PIPITMAC
+        </a>
+      </div>
+
+      <button id="start-btn">
+        ▶ PLAY TAPE
+      </button>
+    </div>
+    <div id="quiz">
+      <h1>Would You Survive a Horror Movie?</h1>
+      <p class="progress" id="progress"></p>
+      <div class="question" id="question"></div>
+      <div class="answers" id="answers"></div>
+    </div>
+
+    <div class="result" id="result">
+      <h2 id="result-title"></h2>
+      <p id="result-desc"></p>
+      <button class="restart" onclick="restartQuiz()">Main Lagi</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
