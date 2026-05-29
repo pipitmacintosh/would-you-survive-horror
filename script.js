@@ -193,7 +193,7 @@ const questions = [
     const results = {
       survivor: {
         title: "🏆 The Final Survivor",
-        desc: "Kamu terlalu paranoid untuk mati di film horror. Orang lain menganggapmu overthinking, tapi ketika hantunya muncul, siapa yang masih hidup? Tepat. Kamu."
+        desc: "Kamu terlalu paranoid untuk mati di film horror. Orang lain menganggapmu overthinking, tapi waktu hantunya muncul, siapa yang masih hidup? Ya kamu lah."
       },
       victim: {
         title: "☠️ The Curious Victim",
