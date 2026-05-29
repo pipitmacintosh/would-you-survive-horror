@@ -158,7 +158,7 @@ const questions = [
           { text: "A. Investigasi lebih jauh", type: "victim" },
           { text: "B. Foto buat bukti", type: "veteran" },
           { text: "C. Langsung keluar dan hubungi polisi", type: "survivor" },
-          { text: "D. Kita pura-pura gak lihat apa-apa.", type: "background" }
+          { text: "D. Kita pura-pura gak lihat apa-apa", type: "background" }
         ]
       },
       {
