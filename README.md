@@ -3,6 +3,7 @@
 A fun interactive horror-themed quiz that determines your fate in a horror movie.
 
 Will you become:
+- The Final Survivor
 - The Curious Victim
 - The Horror Movie Veteran
 - The Secret Villain
